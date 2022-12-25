@@ -14,8 +14,12 @@
     gap: 2rem;
 }
 
-.menu_text {
+.menu_text  , .menu_list{
     padding : 10px 15px ;
+    color: #383838;   
+}
+
+.menu_text{
     font-size: 3rem;
-    font-weight: 600;
+    font-weight: 500;
 }
