@@ -1,0 +1,21 @@
+.navbar {
+    width: 30%;
+    display: flex;
+}
+
+.menu {
+    margin: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #EAEAEA;
+    border-radius: 20px;
+    width: 80%;
+    overflow: hidden;
+    gap: 2rem;
+}
+
+.menu_text {
+    padding : 10px 15px ;
+    font-size: 3rem;
+    font-weight: 600;
+}

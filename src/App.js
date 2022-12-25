@@ -1,14 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-import { Fragment } from 'react'
+import './App.css'
+import Navbar from './components/Navbar';
+import Tasks from './components/Tasks';
 
 function App() {
   return (
-    <Fragment>
-      <div>
-        Hello Making a todo list.
-      </div>
-    </Fragment>
+    <div className='app'>
+      <Navbar></Navbar>
+      <Tasks></Tasks>
+    </div>
   );
 }
 
