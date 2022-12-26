@@ -1,3 +1,22 @@
 .tasks {
     width: 60%;
+    display: flex;
+}
+
+.tasksmain {
+    display: flex;
+    flex-direction: column;
+    background-color: #EAEAEA;
+    border-radius: 20px;
+    width: 100%;
+    overflow: hidden;
+    margin: 2.5rem;
+    margin-left: 0rem;
+}
+
+.heading  , .addtask{
+    font-weight: 500;
+    font-size: 5rem;
+    padding: 10px 15px;
+    color: #383838;
 }

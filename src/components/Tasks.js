@@ -1,9 +1,15 @@
 import classes from './Tasks.module.css'
+import AddTasks from './AddTasks'
 
 const Tasks = () => {
     return (
         <div className={classes.tasks}>
-            From Tasks Section...
+            <div className={classes.tasksmain}>
+                <h1 className={classes.heading}>Today</h1>
+                <div className={classes.addtask}>
+                    <AddTasks></AddTasks>
+                </div>
+            </div>
         </div>
     )
 }
