@@ -3,3 +3,8 @@
    flex-direction: column; 
    gap: 1em;
 }
+
+.lists {
+    font-size: 1em ;
+    font-weight: 600;
+}

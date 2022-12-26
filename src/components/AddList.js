@@ -1,9 +1,11 @@
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import classes from './AddList.module.css'
 import { useDispatch } from 'react-redux'
 import { listActions } from "../store"
 import ListItems from "./ListItems"
 import { useSelector } from "react-redux"
+
+let counter = 0 
 
 const AddList = () => {
 
@@ -26,6 +28,7 @@ const AddList = () => {
             setValid(false)
         }else{
             // console.log(enteredList)
+            setValid(true)
             setIsTouched(false)
             dispatch(listActions.addItemToLists({
                 id : Math.random() ,
@@ -36,15 +39,12 @@ const AddList = () => {
     }
 
     const lists = useSelector(state => state.list.lists)
-
-    useEffect(() => {
-        console.log('changed')
-    } , [lists])
+    const listlength = lists.length
 
     return (
         <div>
             { lists.map(list => (
-                <ListItems key={list.id} id={list.id} title={list.title} taskLength={list.tasks.length}></ListItems>
+                <ListItems key={list.id} id={list.id} title={list.title} listlength={listlength} counter={counter+1} taskLength={list.tasks.length}></ListItems>
             )) }
             {isTouched && (
                 <form onSubmit={onSubmitHandler}>
@@ -53,7 +53,7 @@ const AddList = () => {
                     <button type="submit">Add</button>
                 </form>
             )}
-            {!valid && isTouched && <p>List Name cannot be empty</p>}
+            {!valid && isTouched && <p>List Name cannot be empty!</p>}
             {isTouched && <button onClick={addListHandler}>Cancel</button>}
             {!isTouched && <button onClick={addListHandler} className={classes.btn_new}>+ Add New List</button>}
         </div>

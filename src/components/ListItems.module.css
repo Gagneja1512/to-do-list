@@ -17,11 +17,13 @@
 }
 
 .square {
-    height: 1em;
+    height: .8em;
     width: 1em;
     background-color: blueviolet;
     border-radius: 100%;
     display: inline-block;
-    margin-right: 2rem;
     padding-top: 1em;
-}
+    top: 50%;
+    transform: translate(0 , 10%);
+    margin: auto 2rem;
+} 

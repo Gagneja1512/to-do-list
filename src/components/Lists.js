@@ -4,7 +4,7 @@ import classes from './Lists.module.css'
 const Lists = () => {
     return (
         <div className={classes.listbox}>
-            <span className={classes.lists}>Lists</span>
+            <span className={classes.lists}>LISTS</span>
             <div className={classes.addlist}>
                 <AddList></AddList>
             </div>
