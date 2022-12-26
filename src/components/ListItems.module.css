@@ -1,0 +1,27 @@
+.btn_list {
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #383838;  
+}
+
+.listItems {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .5em;
+}
+
+.taskLength {
+    font-size: 1.8rem;
+    margin-right: 2em;
+}
+
+.square {
+    height: 1em;
+    width: 1em;
+    background-color: blueviolet;
+    border-radius: 100%;
+    display: inline-block;
+    margin-right: 2rem;
+    padding-top: 1em;
+}

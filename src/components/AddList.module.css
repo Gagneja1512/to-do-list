@@ -1,0 +1,12 @@
+.btn_new {
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #383838;   
+    transition: all .4s;
+}
+
+.btn_new:hover {
+    border-bottom: 1px solid #383838;   ;
+    transform: scale(1.05);
+}
