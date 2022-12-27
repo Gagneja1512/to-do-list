@@ -5,6 +5,7 @@ const listSlice = createSlice({
     initialState : {
         lists : [] ,
         listsQuantity : 0 ,
+        selectedList : 0 ,
     } ,
 
     reducers : {
@@ -20,6 +21,24 @@ const listSlice = createSlice({
             const id = action.payload
             state.listsQuantity-- 
             state.lists = state.lists.filter(list => list.id !== id)
+        } ,
+        addTaskToList(state , action) {
+            const id = action.payload.id
+            // console.log(id)
+            state.lists.find(list => list.id === id).tasks.push({
+                taskid : action.payload.taskId ,
+                title : action.payload.title ,
+            })
+
+            // console.log(current(state.lists))
+        } ,
+        removeTaskFromList(state , action) {
+            const id = action.payload.id
+            const taskId = action.payload.taskId
+            state.lists.filter(list => list.id === id).tasks.filter(task => task.id !== taskId)
+        } ,
+        select(state , action){
+            state.selectedList = action.payload.id 
         }
     }
 })

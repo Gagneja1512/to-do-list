@@ -48,8 +48,7 @@ const AddList = () => {
             )) }
             {isTouched && (
                 <form onSubmit={onSubmitHandler}>
-                    <label>Add new list</label>
-                    <input type="text"  ref={enterList} />
+                    <input type="text" placeholder="Add New List" ref={enterList} />
                     <button type="submit">Add</button>
                 </form>
             )}

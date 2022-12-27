@@ -1,5 +1,7 @@
-import { Fragment } from 'react';
+import { Fragment, } from 'react';
 import classes from './ListItems.module.css'
+import { listActions } from './../store/index'
+import { useDispatch } from 'react-redux'
 
 let color = []
 color.push("blue")
@@ -7,13 +9,21 @@ color.push("blueviolet")
 
 const ListItems = (props) => {
 
-    console.log(props.listlength)
     const counter = props.listlength%2
+
+    const dispatch = useDispatch()
+    const getIdHandler = () => {
+        // console.log(props.id)
+       dispatch(listActions.select({
+            id : props.id ,
+       }))
+    }
+
 
     return (
         <Fragment>
             <div className={classes.listItems}>
-                <button className={classes.btn_list}><div style={{ "backgroundColor": color[counter] }} className={classes.square}></div><span>{props.title}</span></button>
+                <button onClick={getIdHandler} className={classes.btn_list}><div style={{ "backgroundColor": color[counter] }} className={classes.square}></div><span>{props.title}</span></button>
                 <span className={classes.taskLength}>{props.taskLength}</span>
             </div>
         </Fragment>
