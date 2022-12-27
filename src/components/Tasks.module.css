@@ -12,6 +12,7 @@
     overflow: hidden;
     margin: 2.5rem;
     margin-left: 0rem;
+    overflow: scroll;
 }
 
 .heading  , .addtask{
@@ -19,4 +20,5 @@
     font-size: 5rem;
     padding: 10px 15px;
     color: #383838;
+    margin-left: .5em;
 }
