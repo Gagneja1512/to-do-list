@@ -1,12 +1,79 @@
-.btn_new {
-    border: none;
-    background: none;
-    cursor: pointer;
-    color: #383838;   
-    transition: all .4s;
+.outerbox{
+    display: flex;
+    flex-direction: column;
 }
 
-.btn_new:hover {
-    border-bottom: 1px solid #383838;   ;
-    transform: scale(1.05);
+.upperbox{
+    display: flex;
+    flex-direction: column;
+}
+
+.formbox{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1em;
+    margin-top: 1em; 
+}
+
+.buttonbox{
+    margin: .51em 0;
+    display: flex;
+    gap: 1em;
+}
+
+.input {
+    padding: 10px;
+    border: 0;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    border-radius:10px;
+    font-family:inherit;
+    font-size: inherit;
+    width: 70%;
+}
+
+.btn_new{
+    width: 9em;
+    margin-left: .8em;
+    margin-top: 1em;
+}
+
+.add{
+    width: 4em;
+}
+
+.add , .btn_new {
+    height: 2em;
+    color: #383838;
+    transition: all .1s;
+    border: none;
+    background-color: #82AAE3;
+    border-radius: 10px;
+}
+
+.add:hover , .btn_new:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transform: translate(0, -2px);
+    background-color: #91D8E4;
+}
+
+.error{
+    color: #3C6255;
+    font-size: 1.2em;
+    margin-left: 1em;
+    margin-top: .7em;
+}
+
+.cancel{
+    width: 4em;
+    color: #383838;
+    transition: all .1s;
+    border: none;
+    background-color: #A9AF7E;
+    border-radius: 10px;
+}
+
+.cancel:hover{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transform: translate(0 , -2px) ;
+    background-color: #7D8F69;
 }

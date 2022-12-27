@@ -69,18 +69,21 @@ const AddTasks = () => {
 
     console.log(tasks)
 
+    const formFocusHandler = () => {
+        setValid(true)
+    }
+
     return (
         <div>
-            <form className={classes.form} onSubmit={formSubmissionHandler}>
+            <form onFocus={formFocusHandler} className={classes.form} onSubmit={formSubmissionHandler}>
                 <input className={classes.input} type='text' placeholder="Add New Task" ref={enterTask} />
                 <button className={classes.btn} type="submit">Add Task</button>
             </form>
+            {!valid && <p className={classes.error}>Task Name cannot be empty.</p>}
             <div className={classes.currentlist}>
                 {currentList.title}
                 {tasksmile && <p className={classes.smile}>Yay! No work Left.</p>}
             </div>
-
-            {!valid && <p className={classes.error}>Task Name cannot be empty.</p>}
             <div className={classes.alltask}>
                 {tasks.map(task => (
                     <TaskItem id={id} taskid={task.taskid} key={task.taskid} title={task.title}></TaskItem>

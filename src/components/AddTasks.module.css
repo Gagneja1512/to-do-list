@@ -4,7 +4,16 @@
     margin-bottom: 1em;
 }
 
-.btn{
+.input {
+    padding: 10px;
+    border: 0;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    border-radius:10px;
+    font-family:inherit;
+    font-size: inherit;
+}
+
+.btn {
     width: 6em;
     height: 2em;
     color: #383838;
@@ -14,26 +23,26 @@
     border-radius: 10px;
 }
 
-.btn:hover{
+.btn:hover {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    transform: translate(0 , -2px) ;
+    transform: translate(0, -2px);
     background-color: #91D8E4;
 }
 
-.error{
+.error {
     color: red;
     font-size: 1em;
 }
 
-.currentlist{
+.currentlist {
     font-size: 1.6em;
     color: #4B56D2;
 }
 
-.id{
+.id {
     color: #3C6255;
 }
 
-.smile{
+.smile {
     margin-top: 1em;
 }
