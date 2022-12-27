@@ -4,7 +4,6 @@ import { listActions } from "../store/index";
 import { useSelector } from "react-redux";
 import { current } from "@reduxjs/toolkit";
 
-let initial = true;
 
 const AddTasks = () => {
 
@@ -16,6 +15,28 @@ const AddTasks = () => {
     const dispatch = useDispatch()
     const id = useSelector(state => state.list.selectedList)
     const list = useSelector(state => state.list.lists)
+
+    const formSubmissionHandler = event => {
+        event.preventDefault();
+        const enteredTask = enterTask.current.value
+
+        const len = enteredTask.trim().length
+        if (len === 0) {
+            setValid(false);
+        } else {
+            setIsTouched(true)
+            setValid(true)
+            setIsSubmitted(true)
+
+            dispatch(listActions.addTaskToList({
+                id: id,
+                taskId: Math.random(),
+                title: enteredTask,
+            }))
+        }
+
+        enterTask.current.value = ''
+    }
 
     if(!id){
         return (
@@ -43,29 +64,6 @@ const AddTasks = () => {
 
     console.log(tasks)
 
-
-    const formSubmissionHandler = event => {
-        event.preventDefault();
-        const enteredTask = enterTask.current.value
-
-        const len = enteredTask.trim().length
-        if (len === 0) {
-            setValid(false);
-        } else {
-            setIsTouched(true)
-            setValid(true)
-            setIsSubmitted(true)
-
-            dispatch(listActions.addTaskToList({
-                id: id,
-                taskId: Math.random(),
-                title: enteredTask,
-            }))
-        }
-
-        initial = false
-    }
-
     return (
         <div>
             <form onSubmit={formSubmissionHandler}>
@@ -73,7 +71,11 @@ const AddTasks = () => {
                 <button type="submit">Add</button>
             </form>
 
-            { }
+            {!valid && <p>Task Name cannot be empty.</p>}
+            {tasks.map(task => (
+                <p key={task.taskid}>{task.title}</p>
+            ))}
+            
         </div>
     )
 }
