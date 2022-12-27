@@ -7,9 +7,9 @@ import TaskItem from "./TaskItems";
 
 const AddTasks = () => {
 
-    const [isTouched, setIsTouched] = useState(false);
+    //const [isTouched, setIsTouched] = useState(false);
     const [valid, setValid] = useState(true)
-    const [submitted, setIsSubmitted] = useState(false)
+    //const [submitted, setIsSubmitted] = useState(false)
 
     const enterTask = useRef()
     const dispatch = useDispatch()
@@ -24,9 +24,9 @@ const AddTasks = () => {
         if (len === 0) {
             setValid(false);
         } else {
-            setIsTouched(true)
+            //setIsTouched(true)
             setValid(true)
-            setIsSubmitted(true)
+            //setIsSubmitted(true)
 
             dispatch(listActions.addTaskToList({
                 id: id,
@@ -38,15 +38,6 @@ const AddTasks = () => {
         enterTask.current.value = ''
     }
 
-    if (!id) {
-        return (
-            <div className={classes.id}>
-                <p>Please select a list.</p>
-                <p>Incase no list make a list first to organise your work.</p>
-            </div> 
-        )
-    }
-
     // console.log(list)
     let currentList
     if (list.length > 0) {
@@ -55,6 +46,15 @@ const AddTasks = () => {
                 currentList = list[i];
             }
         }
+    }
+
+    if(!id || !currentList) {
+        return (
+            <div className={classes.id}>
+                <p>Please select a list.</p>
+                <p>Incase no list make a list first to organise your work.</p>
+            </div> 
+        )
     }
 
     // console.log('currentList' , currentList)
@@ -80,8 +80,8 @@ const AddTasks = () => {
                 <button className={classes.btn} type="submit">Add Task</button>
             </form>
             {!valid && <p className={classes.error}>Task Name cannot be empty.</p>}
-            <div className={classes.currentlist}>
-                {currentList.title}
+            <div className={classes.currlis}>
+                {currentList && currentList.title}
                 {tasksmile && <p className={classes.smile}>Yay! No work Left.</p>}
             </div>
             <div className={classes.alltask}>
