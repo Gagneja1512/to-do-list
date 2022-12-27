@@ -1,4 +1,4 @@
-import { configureStore, createSlice } from '@reduxjs/toolkit'
+import { configureStore, createSlice, current } from '@reduxjs/toolkit'
 
 const listSlice = createSlice({
     name : 'list' ,
@@ -35,7 +35,7 @@ const listSlice = createSlice({
         removeTaskFromList(state , action) {
             const id = action.payload.id
             const taskId = action.payload.taskId
-            state.lists.filter(list => list.id === id).tasks.filter(task => task.id !== taskId)
+            state.lists.find(list => list.id === id).tasks = state.lists.find(list => list.id === id).tasks.filter(task => task.taskid !== taskId)
         } ,
         select(state , action){
             state.selectedList = action.payload.id 

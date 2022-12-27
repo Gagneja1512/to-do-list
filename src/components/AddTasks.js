@@ -65,6 +65,8 @@ const AddTasks = () => {
         }
     }
 
+    const tasksmile = tasks.length === 0
+
     console.log(tasks)
 
     return (
@@ -75,12 +77,13 @@ const AddTasks = () => {
             </form>
             <div className={classes.currentlist}>
                 {currentList.title}
+                {tasksmile && <p className={classes.smile}>Yay! No work Left.</p>}
             </div>
 
             {!valid && <p className={classes.error}>Task Name cannot be empty.</p>}
             <div className={classes.alltask}>
                 {tasks.map(task => (
-                    <TaskItem title={task.title}></TaskItem>
+                    <TaskItem id={id} taskid={task.taskid} key={task.taskid} title={task.title}></TaskItem>
                 ))}
             </div>
         </div>

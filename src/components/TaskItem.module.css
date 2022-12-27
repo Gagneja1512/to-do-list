@@ -1,6 +1,7 @@
 .title {
     font-size: 1.3em ;
     margin-left: .5em;
+    margin-top: 5em;
 }
 
 .box{
@@ -17,4 +18,23 @@
     top: 10%;
     transform: translate(0 , 5%);
     margin: auto 2rem;
+}
+
+.btndelete{
+    width: 4em;
+    height: 1.5em;
+    color: #383838;
+    transition: all .1s;
+    border: none;
+    background-color: #A9AF7E;
+    border-radius: 10px;
+    margin-left: 1em;
+    font-size: .8em;
+    translate: 0 -3px;
+}
+
+.btndelete:hover{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transform: translate(0 , -2px) ;
+    background-color: #91D8E4;
 }
